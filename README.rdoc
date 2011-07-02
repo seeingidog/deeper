@@ -1,6 +1,6 @@
 = deeper
 
-Description goes here.
+Ruby introspective methods.
 
 == Contributing to deeper
  
