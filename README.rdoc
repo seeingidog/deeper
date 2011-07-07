@@ -2,6 +2,24 @@
 
 Provides helper methods for Ruby reflection, mostly object type introspection.
 
+     class Crap
+	  include Deeper
+	  def prints_shit
+	    puts "shit"
+	  end
+	  def prints_something(something)
+	    puts something
+	  end
+	end
+    
+	>> @obj = Crap.new
+	=> #<Crap:0x00000100d114f0>
+    >> @obj.deeper.class_array
+	=> ["Crap"]
+	>> @obj.deeper.methods
+	=> {:prints_shit=>nil, :prints_something=>[[:req, :something]], :po=>[[:req, :o]], :poc=>[[:req, :o]], :pretty_print=>[[:req, :q]], :pretty_print_cycle=>[[:req, :q]], :pretty_print_instance_variables=>nil, :pretty_print_inspect=>nil, :nil?=>nil, :=>[[:req]], :=>[[:req]], :!=>[[:req]], :eql?=>[[:req]], :hash=>nil, :=>=>[[:req]], :class=>nil, :singleton_class=>nil, :clone=>nil, :dup=>nil, :initialize_dup=>[[:req]], :initialize_clone=>[[:req]], :taint=>nil, :tainted?=>nil, :untaint=>nil, :untrust=>nil, :untrusted?=>nil, :trust=>nil, :freeze=>nil, :frozen?=>nil, :to_s=>nil, :inspect=>nil, :methods=>[[:rest]], :singleton_methods=>[[:rest]], :protected_methods=>[[:rest]], :private_methods=>[[:rest]], :public_methods=>[[:rest]], :instance_variables=>nil, :instance_variable_get=>[[:req]], :instance_variable_set=>[[:req], [:req]], :instance_variable_defined?=>[[:req]], :instance_of?=>[[:req]], :kind_of?=>[[:req]], :is_a?=>[[:req]], :tap=>nil, :send=>[[:rest]], :public_send=>[[:rest]], :respond_to?=>[[:rest]], :respond_to_missing?=>[[:req], [:req]], :extend=>[[:rest]], :display=>[[:rest]], :method=>[[:req]], :public_method=>[[:req]], :define_singleton_method=>[[:rest]], :__id__=>nil, :object_id=>nil, :to_enum=>[[:rest]], :enum_for=>[[:rest]], :pretty_inspect=>nil, :ri=>[[:req, :arg]], :=>[[:req]], :equal?=>[[:req]], :!=>nil, :!=>[[:req]], :instance_eval=>[[:rest]], :instance_exec=>[[:rest]], :__send__=>[[:rest]]}	
+
+
 == Contributing to deeper
  
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
