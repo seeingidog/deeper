@@ -15,21 +15,21 @@ describe "Deeper" do
   before(:each) do
     @obj = Crap.new
   end
-  
+
   it "shows #arrayed_class returning an array" do
-    @obj.arrayed_class.class == Array
+    @obj.deeper.class_array.class == Array
   end
-  
+
   it "shows #method_parameters returning an array" do
-    @obj.method_parameters("prints_shit").class == Array
+    @obj.deeper.parameters("prints_shit").class == Array
   end
-  
+
   it "should be an empty Array for a method with no parameters" do
-    @obj.method_parameters("prints_shit").should == []
+    @obj.deeper.parameters("prints_shit").should == []
   end
-  
+
   it "should be a Array containing the parameters for #prints_something" do
-    @obj.method_parameters("prints_something").should == [[:req, :something]] 
+    @obj.deeper.parameters("prints_something").should == [[:req, :something]]
   end
-  
+
 end
